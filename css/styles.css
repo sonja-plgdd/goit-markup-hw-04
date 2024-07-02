@@ -13,7 +13,7 @@ body {
 
 .page-header {
     border-bottom: 1px solid #E7E9FC;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
     z-index: 999;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .logo:hover, .logo:active {
     color: currentColor;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
 }
 
@@ -130,8 +130,9 @@ section {
     background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url(../images/people-office.jpg);
     background-repeat: no-repeat;
-    background-size: 1440px;
-    background-position: 50% 50%;
+    background-size: cover;
+    max-width: 1440px;
+    background-position: center;
     background-color: #2e2f42;
     padding: 188px 0;
 }
@@ -157,7 +158,7 @@ section {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     color: #ffffff;
     cursor: pointer;
@@ -166,15 +167,12 @@ section {
     padding: 16px 32px;
     display: block;
     margin: 0 auto;
-  
-
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover, .button:focus {
     background-color: #404BBF;
     cursor: pointer;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
 }
 
 .text {
@@ -183,6 +181,7 @@ section {
         letter-spacing: 0.02em;
         color: #434455;
 }
+
 
 
 /*about section*/
@@ -224,6 +223,7 @@ section {
     text-align: center;
     margin-bottom: 72px;
 }
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -317,6 +317,7 @@ section {
 
 .social-media-list .social-link:hover {
     background-color: #404BBF;
+    transition-property: background-color;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
 }
@@ -353,29 +354,37 @@ ul {
 
 .portfolio-item {
     width: calc((100% - 48px) / 3);
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+
+.overlay {
     position: relative;
     overflow: hidden;
 }
 
-.overlay {
+.overlay-text {
     position: absolute;
     top: 0;
-    left: 0;
+    padding: 40px 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
     width: 100%;
-    height: 300px;
+    height: 100%;
     background-color: #4D5AE5;
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
 }
 
-.portfolio-item:hover .overlay {
+.portfolio-item:hover .overlay-text {
     transform: translateY(0);
 }
 
 .portfolio-item:hover {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     cursor: pointer;
 }
@@ -406,6 +415,7 @@ img {
 
 .footer-container {
     display: flex;
+    align-items: baseline;
 }
 
 .footer-logo {
@@ -435,6 +445,9 @@ img {
 
 .bold-text {
     font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     color: #fff;
     margin-bottom: 16px;
 }
@@ -445,12 +458,16 @@ img {
     gap: 16px;
 }
 
+.fsocial-media-list .social-link {
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms; 
+}
+
 .fsocial-media-list .social-icon {
     fill: #f4f4fd;
 }
 
 .fsocial-media-list .social-link:hover {
     background-color: #31D0AA;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
 }
